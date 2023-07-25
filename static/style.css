@@ -1,0 +1,25 @@
+body{
+    background-image: url('https://source.unsplash.com/1600x900/?dark,night');
+    
+}
+.card {
+    background: #000000d0;
+    color: white;
+    padding: 1em;
+    border-radius: 30px;
+    width: fit-content;
+    height: fit-content;
+    margin: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    white-space: pre-line;
+    line-height: 2;
+}
+.btn{
+    background: #000000d0;
+    color: white;
+    padding: 1em;
+    margin: 10px;
+    border-radius: 15px;
+}
