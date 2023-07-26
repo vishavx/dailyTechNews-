@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dailyTechNews</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="container" >
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1 class="mt-5 mb-4 text-white">Daily Tech News</h1>
+            </div>
+        </div>
+        <div class="card" id="container">
+            <span class="pt-3 col" >
+                {{News|safe}}
+            
+            </span>
+        </div>
+        
+    </div>
+
+    <div class="row m-3 mt-5 justify-content-center">
+        <button type="button" class="btn" id="btn1" onclick="download()">Download</button>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="/static/html2canvasmin.js"> </script>
+    <script>
+        function download() {
+            html2canvas(document.getElementById("container")).then(canvas => {
+                //document.body.appendChild(canvas);
+                var a = document.createElement('a');
+                a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
+                a.download = 'todaysTechNews.jpg';
+                a.click();
+            });
+        }
+    </script>
+
+</body>
+</html>
